@@ -1,5 +1,7 @@
 package org.sqldroid;
 
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
@@ -8,6 +10,8 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 public class SQLDroidDriver implements java.sql.Driver {
+
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(SQLDroidDriver.class);
 
     /** Key passed when the SQLDroidConnection is created.  The value of this key should be an
      * String containing a numeric value which is the complete value of the flags to be passed to the Android SQLite database
@@ -76,7 +80,7 @@ public class SQLDroidDriver implements java.sql.Driver {
 
     @Override
     public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
         return null;
     }

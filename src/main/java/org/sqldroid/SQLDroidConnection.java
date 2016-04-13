@@ -1,5 +1,8 @@
 package org.sqldroid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.Constructor;
 import java.sql.Array;
 import java.sql.Blob;
@@ -22,6 +25,9 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 public class SQLDroidConnection implements Connection {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SQLDroidConnection.class);
+
     /**
     * A map to a single instance of a SQLiteDatabase per DB.
     */
@@ -210,7 +216,7 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
 
         return null;
@@ -219,7 +225,7 @@ public class SQLDroidConnection implements Connection {
     @Override
     public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability)
     throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
 
         return null;
@@ -232,14 +238,14 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public String getCatalog() throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
         return null;
     }
 
     @Override
     public int getHoldability() throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
         return 0;
     }
@@ -251,21 +257,21 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public int getTransactionIsolation() throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
         return 0;
     }
 
     @Override
     public Map<String, Class<?>> getTypeMap() throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
         return null;
     }
 
     @Override
     public SQLWarning getWarnings() throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
         return null;
     }
@@ -279,27 +285,27 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public boolean isReadOnly() throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
         return false;
     }
 
     @Override
     public String nativeSQL(String sql) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
         sqlitedb.execSQL(sql);
         return "SQLDroid: no return info available from sqlite";
     }
 
     @Override
     public CallableStatement prepareCall(String sql) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
 
         return null;
     }
 
     @Override
     public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
 
         return null;
     }
@@ -307,7 +313,7 @@ public class SQLDroidConnection implements Connection {
     @Override
     public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency,
             int resultSetHoldability) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
 
         return null;
     }
@@ -324,13 +330,13 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public PreparedStatement prepareStatement(String sql, int[] columnIndexes) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
         return null;
     }
 
     @Override
     public PreparedStatement prepareStatement(String sql, String[] columnNames) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
         return null;
     }
 
@@ -341,13 +347,13 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
         return null;
     }
 
     @Override
     public void releaseSavepoint(Savepoint savepoint) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
     }
 
     @Override
@@ -363,7 +369,7 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public void rollback(Savepoint savepoint) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "
                 + DebugPrinter.getLineNumber());
     }
 
@@ -385,40 +391,40 @@ public class SQLDroidConnection implements Connection {
 
     @Override
     public void setCatalog(String catalog) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
 
     }
 
     @Override
     public void setHoldability(int holdability) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
     }
 
     @Override
     public void setReadOnly(boolean readOnly) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
     }
 
     @Override
     public Savepoint setSavepoint() throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
         return null;
     }
 
     @Override
     public Savepoint setSavepoint(String name) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line " + DebugPrinter.getLineNumber());
         return null;
     }
 
     @Override
     public void setTransactionIsolation(int level) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "+ DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "+ DebugPrinter.getLineNumber());
     }
 
     @Override
     public void setTypeMap(Map<String, Class<?>> arg0) throws SQLException {
-        System.err.println(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "+ DebugPrinter.getLineNumber());
+        LOGGER.warn(" ********************* not implemented @ " + DebugPrinter.getFileName() + " line "+ DebugPrinter.getLineNumber());
     }
 
     @Override

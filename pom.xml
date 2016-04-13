@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.sqldroid</groupId>
     <artifactId>sqldroid</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-sirius94-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>sqldroid</name>
     <description>SQLite JDBC driver for Android &amp; now also for non-Android platforms</description>
@@ -14,11 +14,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <scm>
-        <connection>scm:git:git@github.com:SQLDroid/SQLDroid.git</connection>
-        <url>scm:git:git@github.com:SQLDroid/SQLDroid.git</url>
-        <developerConnection>scm:git:git@github.com:SQLDroid/SQLDroid.git</developerConnection>
-    </scm>
     <developers>
         <developer>
             <id>donv</id>
@@ -60,6 +55,11 @@
             <artifactId>android</artifactId>
             <version>${android.platform}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.21</version>
         </dependency>
     </dependencies>
     <build>
@@ -115,6 +115,13 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.7</source>
+                            <target>1.7</target>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>

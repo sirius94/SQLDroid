@@ -19,8 +19,12 @@ import java.util.regex.Pattern;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.MergeCursor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(SQLDroidDatabaseMetaData.class);
 
 	private static final int SQLITE_DONE       =  101;
 	private static final String VIEW_TYPE = "VIEW";
@@ -824,7 +828,7 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 
 	@Override
 	public ResultSet getSchemas() throws SQLException {
-		System.err.println(" ********************* not implemented @ "
+		LOGGER.warn(" ********************* not implemented @ "
 				+ DebugPrinter.getFileName() + " line "
 				+ DebugPrinter.getLineNumber());
 		return null;
@@ -1016,7 +1020,7 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 
 	@Override
 	public String getURL() throws SQLException {
-		System.err.println(" ********************* not implemented @ "
+		LOGGER.warn(" ********************* not implemented @ "
 				+ DebugPrinter.getFileName() + " line "
 				+ DebugPrinter.getLineNumber());
 		return null;

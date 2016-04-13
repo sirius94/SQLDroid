@@ -1,5 +1,8 @@
 package org.sqldroid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,6 +36,8 @@ import java.sql.SQLException;
  */
 public class SQLDroidClob implements Clob
 {
+    private static final Logger LOGGER = LoggerFactory.getLogger(SQLDroidClob.class);
+
     private String string;
     private long length;
 
